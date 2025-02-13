@@ -36,6 +36,66 @@ The **Ticketing App** is a **Django-based web application** designed to **stream
 - **🔗 Git & GitHub** – Version control and repository management.
 
 ---
+## 📂 File Structure
+
+```db.sqlite3
+manage.py
+ticketing_project/
+    __init__.py
+    asgi.py
+    settings.py
+    urls.py
+    wsgi.py
+tickets/
+    __init__.py
+    admin.py
+    apps.py
+    forms.py
+    migrations/
+        __init__.py
+        0001_initial.py
+        0002_ticket_status.py
+        0003_alter_ticket_status_notification.py
+    models.py
+    static/
+        tickets/
+    templates/
+        tickets/
+            base.html
+            home.html
+            notification_center.html
+            temp.html
+            ticket_form.html
+            ticket_list.html
+            ticket_success.html
+    tests.py
+    utils.py
+    views.py
+workers.json
+```
+---
+
+## 🚀 How to Run
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/yourusername/ticketing-app.git
+   cd ticketing-app
+   ```
+2. **Install dependencies**
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. **Apply migrations**
+   ```sh
+   python manage.py migrate
+   ```
+4. **Run the server**
+   ```sh
+   python manage.py runserver
+   ```
+5. **Access the app** in your browser at `http://127.0.0.1:8000/`.
+---
 
 ## 📌 Internal Use Only
 
