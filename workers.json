@@ -1,0 +1,322 @@
+[
+    {
+        "model": "tickets.worker",
+        "pk": 1,
+        "fields": {
+            "name": "CHIDIMMA CYNTHIA UZONDU",
+            "department": "HR department"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 26,
+        "fields": {
+            "name": "SHALOM SAMUEL AJISHOLA",
+            "department": "HR department"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 18,
+        "fields": {
+            "name": "MARTHA OLADELE KEHINDE",
+            "department": "HR department"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 24,
+        "fields": {
+            "name": "RACHEAL OGECHUKWU NWACHUKWU",
+            "department": "HR department"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 25,
+        "fields": {
+            "name": "SALOME GARBA",
+            "department": "Domiciliary Team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 22,
+        "fields": {
+            "name": "PERPETUA OGERI",
+            "department": "Domiciliary Team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 17,
+        "fields": {
+            "name": "MANGNI PETKE",
+            "department": "Domiciliary Team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 36,
+        "fields": {
+            "name": "NICHOLAS LEAM",
+            "department": "Domiciliary Team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 37,
+        "fields": {
+            "name": "OLAMIDE YUSSUPH",
+            "department": "Domiciliary Team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 2,
+        "fields": {
+            "name": "OLUWASEUN CALEB OLUWAFEMI",
+            "department": "Domiciliary Team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 20,
+        "fields": {
+            "name": "OPEYEMI ZULU",
+            "department": "Compliance team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 21,
+        "fields": {
+            "name": "OPEYEMI OLUWAKEMI OLANIRAN",
+            "department": "Compliance team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 27,
+        "fields": {
+            "name": "STEPHANIE FAKAR",
+            "department": "Compliance team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 5,
+        "fields": {
+            "name": "DAVID DAVID",
+            "department": "Compliance team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 19,
+        "fields": {
+            "name": "OLUWATOBI MARTINS SULOLA",
+            "department": "Compliance team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 9,
+        "fields": {
+            "name": "FAVOUR AFIEMO",
+            "department": "Compliance team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 6,
+        "fields": {
+            "name": "DENNIS ADOGA ADOGA",
+            "department": "Accounting team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 28,
+        "fields": {
+            "name": "VICTOR OLALEKANIYIOLA",
+            "department": "Accounting team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 41,
+        "fields": {
+            "name": "IFEDOLAPO OLOWE",
+            "department": "Accounting team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 3,
+        "fields": {
+            "name": "AMOS TOPE EBENEZER",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 4,
+        "fields": {
+            "name": "CHINOYEREM HENRY ISIGUZO",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 7,
+        "fields": {
+            "name": "FAITH OMOTUNDE",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 8,
+        "fields": {
+            "name": "FAVOUR ALONGE",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 10,
+        "fields": {
+            "name": "FAVOUR SAMUEL",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 12,
+        "fields": {
+            "name": "IRIKEFE DESMOND",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 13,
+        "fields": {
+            "name": "JAMES VER",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 14,
+        "fields": {
+            "name": "JOHNSON RICHARD",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 15,
+        "fields": {
+            "name": "JOSEPH ITODO ADEJOH",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 16,
+        "fields": {
+            "name": "JULIANA UGI",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 23,
+        "fields": {
+            "name": "RACHEAL EGBUNU",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 29,
+        "fields": {
+            "name": "AMOS AYINDE",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 30,
+        "fields": {
+            "name": "ANNA MARY MATTEW",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 31,
+        "fields": {
+            "name": "ASOGWA COLLINS",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 32,
+        "fields": {
+            "name": "BABA JEFFERY",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 33,
+        "fields": {
+            "name": "IBRAHIM ILIYA BALAMI",
+            "department": "IT"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 34,
+        "fields": {
+            "name": "JEREMIAH ISORGOSI",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 35,
+        "fields": {
+            "name": "MOMOH VICTORY",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 38,
+        "fields": {
+            "name": "ONAH AUGUSTINE",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 39,
+        "fields": {
+            "name": "UGWU IKENNA",
+            "department": "Recruitment team"
+        }
+    },
+    {
+        "model": "tickets.worker",
+        "pk": 40,
+        "fields": {
+            "name": "WOBIN DEBORAH DAVID",
+            "department": "Recruitment team"
+        }
+    }
+]

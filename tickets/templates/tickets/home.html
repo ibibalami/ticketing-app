@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing App - Home</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Include jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        body {
+            background-color: #f9f9f9; /* Light background color */
+            font-family: 'Arial', sans-serif; /* Clean font */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full height to enable footer sticking */
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #ffffff; /* Header color */
+            color: #ffffff; /* Header text color */
+            border-radius: 0 0 30px 30px; /* Rounded edges at the bottom */
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.5); /* Subtle shadow */
+            position: relative; /* Positioning for logo */
+        }
+
+        .header img.logo {
+            width: 80px; /* Smaller logo size */
+            position: absolute;
+            left: 20px; /* Position logo to the left */
+            top: 20px; /* Position logo from the top */
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333; /* Dark color for better contrast */
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #444; /* Darker paragraph color */
+        }
+
+        .card {
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s; /* Animation effect */
+            background-color: #ffffff; /* White card background */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Hover effect */
+        }
+
+        .btn-custom {
+            background-color: #4caf50; /* Green button color */
+            color: white;
+            border-radius: 25px; /* Rounded button */
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-custom:hover {
+            background-color: #388e3c; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly increase size */
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #6fa3ef; /* Footer color */
+            color: white;
+            border-radius: 30px 30px 0 0; /* Rounded edges at the top */
+            margin-top: auto; /* Pushes the footer to the bottom */
+            width: 100%;
+        }
+
+        /* Button Styles */
+        .btn-right {
+            float: right;
+            margin-top: -30px; /* Adjusted margin for better positioning */
+            margin-right: 20px; /* Added margin for spacing */
+        }
+
+        .rounded-button {
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .rounded-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .canvas-container {
+            background-color: #ffffff; /* White background for the canvas effect */
+            padding: 20px; /* Padding around the form */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+            max-width: 400px; /* Maximum width of the container */
+            margin: 0 auto; /* Center the container */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Space between form groups */
+        }
+
+        .rounded-label {
+            display: inline-block;
+            padding: 8px 12px; /* Padding for labels */
+            background-color: #ff9800; /* Orange button color */
+            color: white; /* Text color */
+            border-radius: 20px; /* Rounded corners for labels */
+            margin-bottom: 5px; /* Space between label and input */
+        }
+
+        .rounded-input {
+            width: auto; /* Adjust width to fit content */
+            display: inline-block; /* Aligns input fields horizontally */
+            margin: 0 auto; /* Center the input fields */
+            border-radius: 20px; /* Rounded corners for input fields */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+        }
+
+        .description {
+            font-size: 1rem; /* Font size for the description */
+            color: #6c757d; /* A softer color for the text */
+        }
+
+        .animated-description {
+            background-color: #e3f2fd; /* Light blue background color */
+            border: 1px solid #90caf9; /* Border for definition */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Padding for inner content */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for animation */
+        }
+
+        .animated-description:hover {
+            transform: scale(1.02); /* Slightly increase size on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+        /* Additional styles for the notification badge */
+        .notification-badge {
+            position: relative;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+    <body>
+        <header class="header">
+            <img src="{% static 'tickets/logo.png' %}" alt="Company Logo" class="logo" />
+    
+            <!-- Home button with notification badge -->
+            <a href="{% url 'home' %}" class="btn btn-primary btn-right rounded-button">🏠 Home
+                <span id="notification-badge" class="notification-badge">New</span>
+            </a>
+    
+            <h1>Enigma Ticketing App</h1>
+            <p>Your one-stop solution for managing and tracking tickets effortlessly.</p>
+            <a href="{% url 'ticket_create' %}" class="btn btn-custom">Create Ticket</a>
+    
+            {% if user.is_superuser %}
+            <a href="{% url 'ticket_list' %}" class="btn btn-custom">View All Tickets</a>
+            {% endif %}
+      
+        </header>
+    
+        <div class="container card mt-5 text-center mb-4 p-4">
+            <h2 class="text-center mb-4">Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-ticket-alt fa-3x mb-3"></i>
+                        <h4>Create Tickets</h4>
+                        <p>Easy ticket creation with a user-friendly interface.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-list-alt fa-3x mb-3"></i>
+                        <h4>View Tickets</h4>
+                        <p>Quickly view and manage your tickets from a centralized location.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-comments fa-3x mb-3"></i>
+                        <h4>Real-Time Updates</h4>
+                        <p>Receive instant updates on ticket status and changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer class="footer">
+            <p>&copy; 2024 Enigma Ticketing App | All Rights Reserved</p>
+        </footer>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            // Function to simulate real-time notification update (for demonstration)
+            function checkForNewTickets() {
+                // Simulating the presence of a new ticket by setting a timeout
+                setTimeout(() => {
+                    // Display the notification badge
+                    document.getElementById('notification-badge').style.display = 'inline';
+                }, 3000); // Show notification after 3 seconds (simulation)
+            }
+    
+            // Call the function when the page loads
+            window.onload = checkForNewTickets;
+        </script>
+        <!-- <script>
+            let lastTicketId = null;
+    
+            function checkForNewTickets() {
+                // Perform an AJAX call to get the latest ticket count
+                $.ajax({
+                    url: "{% url 'get_ticket_count' %}",
+                    method: 'GET',
+                    success: function(data) {
+                        // Check if the latest ticket ID has changed
+                        if (lastTicketId === null) {
+                            // First time load, set the initial ticket ID
+                            lastTicketId = data.latest_ticket_id;
+                        } else if (data.latest_ticket_id > lastTicketId) {
+                            // If a new ticket is detected, update the notification badge
+                            document.getElementById('notification-badge').style.display = 'inline';
+                            lastTicketId = data.latest_ticket_id;
+                        }
+                    }
+                });
+            }
+    
+            // Poll the server every 10 seconds to check for new tickets
+            setInterval(checkForNewTickets, 10000);  // Adjust interval as needed
+    
+            // Call the function when the page loads
+            window.onload = checkForNewTickets;
+        </script> -->
+    </body>
+    </html>
+</body>
+</html>

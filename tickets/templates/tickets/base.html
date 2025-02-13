@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Ticketing System{% endblock %}</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Ticketing System</h1>
+        <a href="{% url 'notification_center' %}">Notifications ({{ notifications|length }})</a>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

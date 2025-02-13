@@ -1,0 +1,21 @@
+<!-- tickets/templates/tickets/notification_center.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification Center</title>
+</head>
+<body>
+    <h2>Notification Center</h2>
+    <ul>
+        {% for notification in notifications %}
+            <li>
+                {{ notification.message }} - {{ notification.created_at }}
+                <a href="{% url 'mark_as_read' notification.id %}">Mark as Read</a>
+            </li>
+        {% empty %}
+            <li>No new notifications.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ticket_list' %}">Back to Ticket List</a>
+</body>
+</html>

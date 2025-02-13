@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f9f9f9; /* Light background color */
+            font-family: 'Arial', sans-serif; /* Clean font */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full height to enable footer sticking */
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #ffffff; /* Header color */
+            color: #ffffff; /* Header text color */
+            border-radius: 0 0 30px 30px; /* Rounded edges at the bottom */
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.5); /* Subtle shadow */
+            position: relative; /* Positioning for logo */
+        }
+
+        .header img.logo {
+            width: 80px; /* Smaller logo size */
+            position: absolute;
+            left: 20px; /* Position logo to the left */
+            top: 20px; /* Position logo from the top */
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333; /* Dark color for better contrast */
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #444; /* Darker paragraph color */
+        }
+
+        .card {
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s; /* Animation effect */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Hover effect */
+        }
+
+        .btn-custom {
+            background-color: #0056b3; /* Darker button color */
+            color: white;
+            border-radius: 25px; /* Rounded button */
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-custom:hover {
+            background-color: #004494; /* Darker button color on hover */
+            transform: scale(1.05); /* Slightly increase size */
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0056b3; /* Footer color */
+            color: white;
+            border-radius: 30px 30px 0 0; /* Rounded edges at the top */
+            margin-top: auto; /* Pushes the footer to the bottom */
+            width: 100%;
+        }
+
+        /* Button Styles */
+        .btn-right {
+            float: right;
+            margin-top: -30px; /* Adjusted margin for better positioning */
+            margin-right: 20px; /* Added margin for spacing */
+        }
+
+        .rounded-button {
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .rounded-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .canvas-container {
+            background-color: #ffffff; /* White background for the canvas effect */
+            padding: 20px; /* Padding around the form */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+            max-width: 400px; /* Maximum width of the container */
+            margin: 0 auto; /* Center the container */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Space between form groups */
+        }
+
+        .rounded-label {
+            display: inline-block;
+            padding: 8px 12px; /* Padding for labels */
+            background-color: #007bff; /* Button color */
+            color: white; /* Text color */
+            border-radius: 20px; /* Rounded corners for labels */
+            margin-bottom: 5px; /* Space between label and input */
+        }
+
+        .rounded-input {
+            width: auto; /* Adjust width to fit content */
+            display: inline-block; /* Aligns input fields horizontally */
+            margin: 0 auto; /* Center the input fields */
+            border-radius: 20px; /* Rounded corners for input fields */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+        }
+        .description {
+    font-size: 1rem; /* Font size for the description */
+    color: #6c757d; /* A softer color for the text */
+}
+.animated-description {
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ced4da; /* Border for definition */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for inner content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for animation */
+}
+
+.animated-description:hover {
+    transform: scale(1.02); /* Slightly increase size on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+.step-list {
+        list-style-type: disc; /* Use disc bullets */
+        margin: 15px 0; /* Space around the list */
+        padding-left: 20px; /* Indent the list */
+    }
+
+    .step-list li {
+        margin-bottom: 10px; /* Space between list items */
+        font-size: 1rem; /* Font size for the description */
+        color: #6c757d;
+        transition: color 0.3s; /* Smooth color transition on hover */
+    }
+
+    .step-list li:hover {
+        color: #007bff; /* Change color on hover */
+    }
+
+    .custom-text-left {
+        text-align: left; /* Override text-center to align text to the left */
+    }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="{% static 'tickets/logo.png' %}" alt="Company Logo" class="logo" />
+
+        <a href="{% url 'home' %}" class="btn btn-primary btn-right rounded-button">🏠 Home</a>
+    </header>
+
+    <div class="container card mt-5 text-center mb-4 p-4">
+        <h1 class="text-center mb-4">Create Ticket</h1>
+        <div class="description mb-4 animated-description">
+            <p>Please fill out the form below to create a new ticket. Make sure to provide accurate information so that we can assist you effectively. Once you submit the form, you will receive a confirmation message.</p>
+        
+            <ul class="step-list custom-text-left mb-4">
+                <li>Step 1: Select your name in the first field.</li>
+                <li>Step 4: Describe the issue or request in detail.</li>
+                <li>Step 5: Review your information before submitting.</li>
+                <li>Step 6: Click the 'Submit' button to create your ticket.</li>
+            </ul>
+        </div>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn rounded-button">Submit</button>
+        </form>
+    </div>
+    
+    
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Enigma Ticketing App | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
