@@ -18,6 +18,10 @@ The **Ticketing App** is a **Django-based web application** designed to **stream
 
 ✔️ **Responsive Design** 📱 – Works smoothly across various devices.
 
+✔️ **Ticket Printing** 🖨️ – Tickets can be printed for offline reference.
+
+✔️ **Status Tracking** ✅ – Each ticket shows whether it is treated, pending, or resolved.
+
 
 ---
 
